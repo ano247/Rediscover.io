@@ -27,17 +27,9 @@ function App() {
     }));
   };
 
-  /* const handleEmailInputChange = (event) => {
-     event.persist();
-     setValues((values) => ({
-       ...values,
-       email: event.target.value,
-     }));
-   }; */
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (values.firstName && values.lastName /* && values.email */) {
+    if (values.firstName && values.lastName) {
       setValid(true);
     }
     setSubmitted(true);
@@ -46,10 +38,10 @@ function App() {
   return (
     <div class="form-container">
       <form class="register-form" onSubmit={handleSubmit}>
-        {/* Uncomment the next line to show the success message */}
+
         {submitted ? <div class='success-message'>Bookmark Saved!</div> : null}
 
-        <input
+        <textarea
           id="first-name"
           class="form-field"
           type="text"
@@ -57,11 +49,12 @@ function App() {
           name="firstName"
           value={values.firstName}
           onChange={handleFirstNameInputChange}
-        />
+          wrap="soft"
+        ></textarea>
 
         {/* Uncomment the next line to show the error message */}
         {submitted && !values.firstName && <span id="first-name-error">Please enter some tags!</span>}
-        <input
+        <textarea
           id="last-name"
           class="form-field"
           type="text"
@@ -69,23 +62,12 @@ function App() {
           name="lastName"
           value={values.lastName}
           onChange={handleLastNameInputChange}
-        />
+          wrap="soft"
+        ></textarea>
 
         {/* Uncomment the next line to show the error message */}
         {submitted && !values.lastName && <span id="last-name-error">Please enter your insights!</span>}
 
-        {/*<input
-          id="email"
-          class="form-field"
-          type="text"
-          placeholder="Email"
-          name="email"
-          value={values.email}
-          onChange={handleEmailInputChange}
-  /> */ }
-
-        {/* Uncomment the next line to show the error message */}
-        {/*submitted && !values.email && <span id="email-error">Please enter an email address</span> */}
         <button class="form-field" type="submit">
           Bookmark It!
         </button>

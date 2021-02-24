@@ -9,7 +9,7 @@ body {
 }
 
 .form-container {
-  max-width: 360px;
+  max-width: 500px;
   background-color: white;
   margin: auto;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -45,7 +45,7 @@ span {
   margin-bottom: 15px;
 }
 
-input {
+textarea {
   background: #f2f2f2;
 }
 

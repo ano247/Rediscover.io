@@ -2,12 +2,10 @@ console.log("content script running");
 
 chrome.runtime.onMessage.addListener((request) => {
 
-
     if (request.type === 'popup-modal') {
         console.log(request.favIconUrl);
         bookmarkDetails = request.bookmarkDeets
-        console.log(bookmarkDetails)
-        console.log(bookmarkDetails.title)
+        //post bookmark details to db here?
 
         showModal();
     }
@@ -19,7 +17,7 @@ const showModal = () => {
         `height:750px;
        border: none;
        top:50px;
-       width : 300px
+       max-width : 800px
        border-radius:20px;
        background-color:white;
        position: fixed; box-shadow: 0px 12px 48px rgba(29, 5, 64, 0.32);`
