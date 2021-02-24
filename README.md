@@ -1,5 +1,6 @@
-# Demo
+# Intro and Demo
 
+A chrome extension where you can create a Chrome bookmark, write your insights along with that, tag them, and rediscover them later on with ease!
 
 
 
