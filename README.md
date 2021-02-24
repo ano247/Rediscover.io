@@ -2,7 +2,7 @@
 
 A chrome extension where you can create a Chrome bookmark, write your insights along with that, tag them, and rediscover them later on with ease!
 
-Bookmark a Webpage and write and tag as you like :
+Press Ctrl + D to bookmark a Webpage and write and tag as you like :
 
 ![bookmark it](https://github.com/ano247/Rediscover.io/blob/master/bookmarkingGif.gif)
 
