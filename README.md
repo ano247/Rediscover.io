@@ -4,6 +4,9 @@ A chrome extension where you can create a Chrome bookmark, write your insights a
 
 ![bookmark it](https://github.com/ano247/Rediscover.io/blob/master/bookmarkingGif.gif)
 
+
+![Search](https://github.com/ano247/Rediscover.io/blob/master/searchGif.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
