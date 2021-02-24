@@ -1,3 +1,9 @@
+# Intro and Demo
+
+A chrome extension where you can create a Chrome bookmark, write your insights along with that, tag them, and rediscover them later on with ease!
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
