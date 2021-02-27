@@ -6,7 +6,7 @@ Press Ctrl + D to bookmark a Webpage and write and tag as you like :
 
 ![bookmark it](https://github.com/ano247/Rediscover.io/blob/master/bookmarkingGif.gif)
 
-Search that in your collection using title/tags and click to see what insights you had : 
+Search that in your collection using title/tags and click the "Insights" button to see what insights you had, click on the favicon to visit that page: 
 
 ![Search](https://github.com/ano247/Rediscover.io/blob/master/searchGif.gif)
 
