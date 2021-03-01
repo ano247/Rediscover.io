@@ -4,32 +4,32 @@ import "./index.css";
 function App() {
 
   const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
+    tags: "",
+    texts: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
 
-  const handleFirstNameInputChange = (event) => {
+  const handleTagInputChange = (event) => {
     event.persist();
     setValues((values) => ({
       ...values,
-      firstName: event.target.value,
+      tags: event.target.value,
     }));
   };
 
-  const handleLastNameInputChange = (event) => {
+  const handleInsightInputChange = (event) => {
     event.persist();
     setValues((values) => ({
       ...values,
-      lastName: event.target.value,
+      texts: event.target.value,
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (values.firstName && values.lastName) {
+    if (values.tags && values.texts) {
       setValid(true);
     }
     setSubmitted(true);
@@ -46,27 +46,27 @@ function App() {
           class="form-field"
           type="text"
           placeholder="tags"
-          name="firstName"
-          value={values.firstName}
-          onChange={handleFirstNameInputChange}
+          name="tags"
+          value={values.tags}
+          onChange={handleTagInputChange}
           wrap="soft"
         ></textarea>
 
         {/* Uncomment the next line to show the error message */}
-        {submitted && !values.firstName && <span id="first-name-error">Please enter some tags!</span>}
+        {submitted && !values.tags && <span id="first-name-error">Please enter some tags!</span>}
         <textarea
           id="last-name"
           class="form-field"
           type="text"
           placeholder="Insight"
-          name="lastName"
-          value={values.lastName}
-          onChange={handleLastNameInputChange}
+          name="texts"
+          value={values.texts}
+          onChange={handleInsightInputChange}
           wrap="soft"
         ></textarea>
 
         {/* Uncomment the next line to show the error message */}
-        {submitted && !values.lastName && <span id="last-name-error">Please enter your insights!</span>}
+        {submitted && !values.texts && <span id="last-name-error">Please enter your insights!</span>}
 
         <button class="form-field" type="submit">
           Bookmark It!

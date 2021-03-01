@@ -4,16 +4,16 @@ import Fuse from 'fuse.js';
 
 function App() {
   const [query, updateQuery] = useState('');
-  const [characters, setCharacter] = useState([])
+  const [bookmarkPosts, setBookmarkPost] = useState([])
   const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     fetch("http://localhost:3001/api/data").then(
-      res => setCharacter(res.data)
+      res => setBookmarkPost(res.data)
     ).catch(err => setHasError(true))
   }, [])
 
-  const fuse = new Fuse(characters, {
+  const fuse = new Fuse(bookmarkPosts, {
     keys: [
       'title',
       'tags'
@@ -22,7 +22,7 @@ function App() {
   });
 
   const results = fuse.search(query);
-  const characterResults = query ? results.map(character => character.item) : characters;
+  const bookmarkResults = query ? results.map(bookmarkPost => bookmarkPost.item) : bookmarkPosts;
 
   function onSearch({ currentTarget }) {
     updateQuery(currentTarget.value);
@@ -38,19 +38,19 @@ function App() {
       </header>
 
       <main className="container">
-        <ul className="characters">
-          {characterResults.map(character => {
-            const { title, thumb, hypeLink, insight } = character;
+        <ul className="bookmarkPosts">
+          {bookmarkResults.map(bookmarkPost => {
+            const { title, thumb, hypeLink, insight } = bookmarkPost;
             return (
-              <li key={title} className="character">
+              <li key={title} className="bookmarkPost">
 
                 <a href={hypeLink}><strong>^</strong></a>
-                <span className="character-thumb" style={{
+                <span className="bookmarkPost-thumb" style={{
                   backgroundImage: `url(${thumb})`
                 }} />
 
 
-                <ul className="character-meta">
+                <ul className="bookmarkPost-meta">
                   <li>
                     <strong>Title:</strong> {title}
                   </li>

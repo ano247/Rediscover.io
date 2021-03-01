@@ -4,18 +4,22 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/api', (req, res) => {
-
-    //parse tags field 
-
+app.post('/savePost', (req, res) => {
 
     //try to save and then catch error
+    const id = req.body.id;
+    const url = req.body.url;
+
     try {
 
     }
     catch {
 
     }
+
+})
+
+app.post('/updatePost', (req, res) => {
 
 })
 
