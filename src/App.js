@@ -10,6 +10,7 @@ function App() {
 
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
+  const [toSend, setToSend] = useState([])
 
   const handleTagInputChange = (event) => {
     event.persist();
@@ -31,6 +32,15 @@ function App() {
     event.preventDefault();
     if (values.tags && values.texts) {
       setValid(true);
+      fetch('http://localhost:3001/updatePost/', {
+        method: 'POST',
+        body: JSON.stringify({ values }),
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then(() => setValues({
+          tags: "",
+          texts: "",
+        }))
     }
     setSubmitted(true);
   }
