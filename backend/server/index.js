@@ -2,7 +2,7 @@ const express = require('express')
 require('dotenv').config();
 const app = express();
 const mongoose = require('mongoose');
-const { create } = require('../models/Posts');
+//const { create } = require('../models/Posts');
 const post = require('../models/Posts');
 
 mongoose.connect("process.env.DATABASE_URL", {
@@ -34,7 +34,13 @@ app.post('/updatePost', (req, res) => {
 })
 
 app.get('/api/data', (req, res) => {
-
+    try {
+        const all = await post.find()
+        res.send(all);
+    }
+    catch (err) {
+        res.send(err)
+    }
 })
 
 const port = 3001;
