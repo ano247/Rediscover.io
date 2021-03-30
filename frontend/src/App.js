@@ -9,7 +9,13 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:3001/api/data").then(
-      res => setBookmarkPost(res.data)
+      res => {
+        const doc = []
+        res.data.lean().exec(function (docs, err) {
+          docs = docs;
+        })
+        setBookmarkPost(doc)
+      }
     ).catch(err => setHasError(true))
   }, [])
 

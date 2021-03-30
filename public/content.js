@@ -7,10 +7,10 @@ chrome.runtime.onMessage.addListener((request) => {
         bookmarkDetails = request.bookmarkDeets
         //post bookmark details to db here?
 
-        showModal();
+        showModal(request);
     }
 })
-const showModal = () => {
+const showModal = (request) => {
     const modal = document.createElement("dialog");
     modal.setAttribute(
         "style",
@@ -31,7 +31,7 @@ const showModal = () => {
     const dialog = document.querySelector("dialog");
     dialog.showModal();
     const iframe = document.getElementById("popup-content");
-    iframe.src = chrome.runtime.getURL("index.html");
+    iframe.src = chrome.runtime.getURL("index.html") + "?" + "bookmarkID=" + request.id;
     iframe.frameBorder = 0;
     dialog.querySelector("button").addEventListener("click", () => {
         dialog.close();

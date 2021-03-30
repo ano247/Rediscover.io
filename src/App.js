@@ -10,7 +10,7 @@ function App() {
 
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
-  const [toSend, setToSend] = useState([])
+  const [values, setValues] = useState([])
 
   const handleTagInputChange = (event) => {
     event.persist();
