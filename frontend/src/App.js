@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 import Fuse from 'fuse.js';
 
+
 function App() {
   const [query, updateQuery] = useState('');
   const [bookmarkPosts, setBookmarkPost] = useState([])
   const [hasError, setHasError] = useState(false)
+
 
   useEffect(() => {
     fetch("http://localhost:3001/api/data").then(

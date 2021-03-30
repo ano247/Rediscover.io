@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
+import { useLocation } from 'react-router-dom'
+import queryString from 'query-string'
 
 function App() {
 
@@ -7,6 +9,9 @@ function App() {
     tags: "",
     texts: "",
   });
+
+  const { search } = useLocation()
+  const { id } = queryString.parse(search)
 
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
@@ -32,9 +37,10 @@ function App() {
     event.preventDefault();
     if (values.tags && values.texts) {
       setValid(true);
+      const toSend = JSON.stringify({ values })
       fetch('http://localhost:3001/updatePost/', {
         method: 'POST',
-        body: JSON.stringify({ values }),
+        body: { id, toSend },
         headers: { 'Content-Type': 'application/json' },
       })
         .then(() => setValues({
